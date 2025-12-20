@@ -7,9 +7,11 @@ get '/' do
 end
 
 get '/about' do
+  @page_title="About"
   erb :about
 end
 
 get '/contact' do
+  @page_title="Contact"
   erb :contact
 end

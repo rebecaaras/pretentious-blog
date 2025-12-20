@@ -8,15 +8,11 @@
 
   </head>
   <body>
-    <header>
-      <h1>a pretentious blog</h1>
-    </header>
-
+    <%=@page_title%>
     <%=yield%>
 
     <footer>
-      <hr>
-      <p><%= Time.now.year %></p>
+      <p>Built with love and excitement - <%= Time.now.year %></p>
     </footer>
   </body>
 </html>
