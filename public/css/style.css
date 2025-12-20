@@ -1,16 +1,35 @@
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  margin: 20px;
+  max-width: 800px;
+  padding: 20px;
   line-height: 1.6;
 }
 
 h1 {
   color: #031425;
   font-weight: 500;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 h2 {
   font-weight: 500;
+}
+
+p {
+  padding-bottom: 0.8rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  font-size: small;
 }
