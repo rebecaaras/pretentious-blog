@@ -1,0 +1,16 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #031425;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 500;
+}
