@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra' # DSL (Domain Specific Language) for easily building rails web applications
+require 'sinatra/activerecord'
 require 'erb' # templating language
 
 get '/' do
