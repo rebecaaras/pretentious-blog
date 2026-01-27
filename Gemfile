@@ -7,6 +7,7 @@ gem "rake"
 gem "sqlite3", "~> 2.0"
 gem "pg"
 gem "rackup"
+gem "puma"
 
 # What does it do ?
 group :development, :test do

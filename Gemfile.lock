@@ -34,6 +34,7 @@ GEM
     multi_json (1.19.1)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.7.5)
     pg (1.6.3)
     pg (1.6.3-aarch64-linux)
     pg (1.6.3-aarch64-linux-musl)
@@ -42,6 +43,8 @@ GEM
     pg (1.6.3-x86_64-linux)
     pg (1.6.3-x86_64-linux-musl)
     prism (1.8.0)
+    puma (7.2.0)
+      nio4r (~> 2.0)
     rack (3.2.4)
     rack-protection (4.2.1)
       base64 (>= 0.1.0)
@@ -103,6 +106,7 @@ PLATFORMS
 
 DEPENDENCIES
   pg
+  puma
   rackup
   rake
   sinatra (~> 4.0)
