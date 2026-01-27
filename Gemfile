@@ -1,6 +1,15 @@
 source "https://rubygems.org"
+ruby "3.4.7"
 
 gem "sinatra", "~> 4.0"
 gem "sinatra-activerecord", "~> 2.0"
 gem "rake"
 gem "sqlite3", "~> 2.0"
+gem "pg"
+gem "rackup"
+
+# What does it do ?
+group :development, :test do
+  gem "sqlite3"
+  gem "sinatra-reloader"
+end
