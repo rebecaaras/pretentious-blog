@@ -10,6 +10,5 @@ gem "rackup"
 
 # What does it do ?
 group :development, :test do
-  gem "sqlite3"
   gem "sinatra-reloader"
 end
