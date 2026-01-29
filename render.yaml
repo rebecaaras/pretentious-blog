@@ -16,4 +16,4 @@ services:
 databases:
   - name: pretentious-blog-db
     plan: free
-    databaseName: blog_production
+    databaseName: pretentious-blog-db
