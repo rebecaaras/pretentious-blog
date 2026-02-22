@@ -48,3 +48,8 @@ get '/contact' do
   @page_title="Contact"
   erb :contact
 end
+
+get '/pages/jap' do
+  @page_title="Japanese"
+  erb :"pages/jap"
+end
