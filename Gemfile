@@ -6,6 +6,7 @@ gem "yaml"
 gem "rake"
 gem "rackup"
 gem "puma"
+gem "kramdown"
 
 
 # What does it do ?
