@@ -15,12 +15,14 @@ body {
 h1 {
   color: #031425;
   font-weight: 500;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  font-size: x-large;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 h2 {
   font-weight: 500;
+  font-size: large;
 }
 
 p {
