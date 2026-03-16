@@ -14,6 +14,8 @@ class Post
     @slug = generate_slug(title)
   end
 
+  
+
   def self.parse(file)
     text = File.read(file).strip
     meta, body = text.split('---')[1..2]
@@ -32,7 +34,13 @@ class Post
   end
 
   def generate_slug(title)
-    title.strip.downcase.gsub(/(&|&amp;)/, ' and ').gsub(/[\s\.\/\\]/, '-').gsub(/[^\w-]/, '').gsub(/[-_]{2,}/, '-').gsub(/^[-_]/, '').gsub(/[-_]$/, '')
+    title.strip.downcase
+    .gsub(/(&|&amp;)/, ' and ')
+    .gsub(/[\s\.\/\\]/, '-')
+    .gsub(/[^\w-]/, '')
+    .gsub(/[-_]{2,}/, '-')
+    .gsub(/^[-_]/, '')
+    .gsub(/[-_]$/, '')
   end
 end
 
