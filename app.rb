@@ -4,12 +4,14 @@ require 'erb' # templating language
 require 'kramdown'
 
 class Post
-  attr_reader :title, :date, :body
+  attr_reader :title, :date, :body, :tags, :slug
   
   def initialize(post_hash)
     @title = post_hash[:title]
     @date = Date.parse(post_hash[:date])
     @body = post_hash[:body]
+    @tags = tags_array(post_hash[:tags])
+    @slug = generate_slug(title)
   end
 
   def self.parse(file)
@@ -23,6 +25,14 @@ class Post
     end
     post_hash[:body] = body.strip
     new(post_hash)
+  end
+
+  def tags_array(tags)
+    tags.gsub(" ", "").split(",")
+  end
+
+  def generate_slug(title)
+    title.strip.downcase.gsub(/(&|&amp;)/, ' and ').gsub(/[\s\.\/\\]/, '-').gsub(/[^\w-]/, '').gsub(/[-_]{2,}/, '-').gsub(/^[-_]/, '').gsub(/[-_]$/, '')
   end
 end
 
@@ -46,11 +56,5 @@ get '/pages/jap' do
 end
 
 get '/post' do
-  @page_title="Example post"
-  @tags = ["ruby", "sinatra", "blog"]
-  @date = Date.today
-  @slug = :some_slug_here
-  @body = Kramdown::Document.new(File.read("posts/example_post_body.md")).to_html
-  # #{@slug}.gsub!("_","-")
   erb :'post'
 end
