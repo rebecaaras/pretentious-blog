@@ -1,12 +1,14 @@
 require 'rubygems'
-require 'sinatra' # DSL (Domain Specific Language) for easily building rails web applications
-require 'erb' # templating language
+require 'sinatra'
+require 'erb'
 require 'kramdown'
 
 class Post
   attr_reader :title, :date, :body, :tags, :slug
   
-  def initialize(post_hash)
+  def initialize(filename)
+    post_hash = parse(filename)
+
     @title = post_hash[:title]
     @date = Date.parse(post_hash[:date])
     @body = post_hash[:body]
@@ -14,10 +16,15 @@ class Post
     @slug = generate_slug(title)
   end
 
-  
+  def self.all
+    posts_dir = "posts/"
+    Dir::new(posts_dir).children.collect do |filename|
+      new("#{posts_dir}#{filename}")
+    end
+  end
 
-  def self.parse(file)
-    text = File.read(file).strip
+  def parse(filename)
+    text = File.read(filename).strip
     meta, body = text.split('---')[1..2]
 
     post_hash = {}
@@ -25,8 +32,8 @@ class Post
       k, v = line.split(":")
       post_hash[k.strip.to_sym] = v.strip
     end
-    post_hash[:body] = body.strip
-    new(post_hash)
+    post_hash[:body] = Kramdown::Document.new(body.strip).to_html
+    post_hash
   end
 
   def tags_array(tags)
@@ -45,6 +52,7 @@ class Post
 end
 
 get '/' do
+  @posts = Post.all
   erb :index
 end
 
