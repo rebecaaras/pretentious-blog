@@ -48,6 +48,11 @@ class Post
     .gsub(/[-_]{2,}/, '-')
     .gsub(/^[-_]/, '')
     .gsub(/[-_]$/, '')
+    .to_sym
+  end
+
+  def self.find_by_slug(slug)
+    Post.all.select { |post| post.slug == slug}[0]
   end
 end
 
@@ -71,7 +76,7 @@ get '/pages/jap' do
   erb :"pages/jap"
 end
 
-get '/post' do
-  @posts = Post.all
+get '/posts/:slug' do
+  @post = Post.find_by_slug(:"#{params[:slug]}")
   erb :'post'
 end

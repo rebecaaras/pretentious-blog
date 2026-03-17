@@ -21,7 +21,7 @@
 
 <h2>Most recent posts</h2>
 <% @posts.each do |post|%>
-  <h3><%= post.title %></h3><span><%= post.date %></span>
+  <a href="/posts/my-first-blog-post"><h3><%= post.title %></h3></a><span><%= post.date %></span>
   <span>
     <% post.tags.each do |tag| %>
       <span><%= tag %></span>
