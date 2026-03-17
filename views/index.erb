@@ -20,4 +20,12 @@
 </article>
 
 <h2>Most recent posts</h2>
-<!--include posts rendering here... -->
+<% @posts.each do |post|%>
+  <h3><%= post.title %></h3><span><%= post.date %></span>
+  <span>
+    <% post.tags.each do |tag| %>
+      <span><%= tag %></span>
+    <% end %>
+  </span>
+  <br>
+<% end %>

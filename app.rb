@@ -72,5 +72,6 @@ get '/pages/jap' do
 end
 
 get '/post' do
+  @posts = Post.all
   erb :'post'
 end
