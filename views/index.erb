@@ -21,11 +21,15 @@
 
 <h2>Most recent posts</h2>
 <% @posts.each do |post|%>
-  <a href="/posts/my-first-blog-post"><h3><%= post.title %></h3></a><span><%= post.date %></span>
-  <span>
-    <% post.tags.each do |tag| %>
-      <span><%= tag %></span>
-    <% end %>
-  </span>
-  <br>
+  <div class="post-preview">
+    <a href="/posts/my-first-blog-post">
+      <h3><%= post.title %></h3>
+    </a>
+    <span class="date-tags">
+      <span><%= post.date %></span>    
+      <% post.tags.each do |tag| %>
+        <span class="tag"><%= tag %></span>
+      <% end %>
+    </span>
+  </div>
 <% end %>
