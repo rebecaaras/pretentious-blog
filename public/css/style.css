@@ -51,13 +51,16 @@ p {
 
 .date-tags {
   display: inline;
-  margin-right: 0.4rem;
   color: #4f4f4f;
   font-size: 0.8rem;
 }
 
-.tag {
+.date {
   margin-right: 0.4rem;
+}
+
+.tag {
+  margin-right: 0.2rem;
   text-decoration: underline;
   color: #4f4f4f;
   font-size: 0.8rem;
