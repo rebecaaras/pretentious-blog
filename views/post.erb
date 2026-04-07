@@ -1,8 +1,5 @@
-<p><%= @post.date %></p>
-<p>
-  <% @post.tags.each do |tag|%>
-    <span><%=tag%></span>
-  <% end %>
-</p>
-<p><%= @post.slug %></p>
+<span><%= @post.date %></span>
 <%= @post.body %>
+<% @post.tags.each do |tag|%>
+  <span class="tag"><%=tag%></span>
+<% end %>

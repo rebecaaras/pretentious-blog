@@ -22,7 +22,7 @@
 <h2>Most recent posts</h2>
 <% @posts.each do |post|%>
   <div class="post-preview">
-    <a href="/posts/my-first-blog-post">
+    <a href=<%= "/posts/#{post.slug}"%>>
       <h3><%= post.title %></h3>
     </a>
     <span class="date-tags">
