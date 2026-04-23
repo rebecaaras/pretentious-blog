@@ -57,7 +57,8 @@ class Post
 end
 
 get '/' do
-  @posts = Post.all
+  @posts = Post.all.sort_by {|post| post.date }.reverse
+
   erb :index
 end
 
