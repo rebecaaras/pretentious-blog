@@ -77,6 +77,12 @@ get '/pages/jap' do
   erb :"pages/jap"
 end
 
+get '/pages/books' do
+  @page_title="Books Lists"
+  erb :"pages/books"
+end
+
+
 get '/posts/:slug' do
   @post = Post.find_by_slug(:"#{params[:slug]}")
   erb :'post'
