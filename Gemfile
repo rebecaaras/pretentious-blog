@@ -8,7 +8,6 @@ gem "rackup"
 gem "puma"
 gem "kramdown"
 
-
 # What does it do ?
 group :development, :test do
   gem "sinatra-reloader"
