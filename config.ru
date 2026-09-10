@@ -2,8 +2,8 @@ require_relative "./app"
 
 set :host_authorization, {
     permitted_hosts: [
-      "rebecaaras.net",
-      "www.rebecaaras.net",
+      "rebecaaras.org",
+      "www.rebecaaras.org",
       "143.244.149.47",
     ]
 }
