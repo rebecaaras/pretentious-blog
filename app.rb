@@ -77,9 +77,9 @@ get '/pages/jap' do
   erb :"pages/jap"
 end
 
-get '/pages/books' do
-  @page_title="Books Lists"
-  erb :"pages/books"
+get '/pages/readings' do
+  @page_title="Readings"
+  erb :"pages/readings"
 end
 
 
